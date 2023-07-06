@@ -1,0 +1,29 @@
+/*Write a C++ program that will calculate the sum and average 
+of all values in a multidimensional array.*/
+
+#include <iostream>
+
+using namespace std;
+
+const int rows = 2;
+const int columns = 3;
+
+double sumOfArray(int myArray[][columns]){
+    double sum = 0;
+    for (int r = 0; r < rows; r++){
+        for (int c = 0; c < columns; c++){
+            sum += myArray[r][c];
+        }
+    } return sum;
+}
+double averageOfArray(int myArray[][columns]){
+    return sumOfArray(myArray)/(rows*columns);
+}
+
+int main () {
+    
+    int myArray[][columns] = {{1,2,3}, {4,5,6}};
+    cout<<"Sum: "<<sumOfArray(myArray)<<endl<<"Average: "<<averageOfArray(myArray);
+    
+    return 0;
+}
