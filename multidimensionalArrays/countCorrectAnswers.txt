@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+const int numberOfStudents = 8;
+const int numberOfQuestions = 10;
+
+void countcorrectAnswers(char arr[][numberOfQuestions], char correctAnswers[numberOfQuestions]){
+    int counter;
+    for (int i = 0; i < numberOfStudents; i++){
+        counter = 0;
+        for (int j = 0; j < numberOfQuestions; j++){
+            if (arr[i][j] == correctAnswers[j]){
+                counter++;
+            }
+        }
+        cout<<"Student "<<i<<" --> "<<counter<<endl;
+    }
+}
+int main (){
+    char answers[numberOfStudents][numberOfQuestions] = {
+        {'A', 'B', 'A', 'C', 'C', 'D', 'E', 'E', 'A', 'D'},
+        {'D', 'B', 'A', 'B', 'C', 'A', 'E', 'E', 'A', 'D'},
+        {'E', 'D', 'D', 'A', 'C', 'B', 'E', 'E', 'A', 'D'},
+        {'C', 'B', 'A', 'E', 'D', 'C', 'E', 'E', 'A', 'D'},
+        {'A', 'B', 'D', 'C', 'C', 'D', 'E', 'E', 'A', 'D'},
+        {'B', 'B', 'E', 'C', 'C', 'D', 'E', 'E', 'A', 'D'},
+        {'B', 'B', 'A', 'C', 'C', 'D', 'E', 'E', 'A', 'D'},
+        {'E', 'B', 'E', 'C', 'C', 'D', 'E', 'E', 'A', 'D'}
+    };
+    char correctAnswers[numberOfQuestions] = {'D', 'B', 'D', 'C', 'C', 'D', 'A', 'E', 'A', 'D'};
+    countcorrectAnswers(answers, correctAnswers);
+    
+    return 0;
+}
