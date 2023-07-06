@@ -1,0 +1,22 @@
+//Find sum by column
+#include <iostream>
+
+using namespace std;
+
+void sumByColumn(int arr[][3], int r, int c){
+    int sum;
+    for(int column = 0; column < c; column++){
+        sum = 0;
+        for (int row = 0; row < r; row++){
+            sum += arr[row][column];
+        }
+        cout<<"Sum: "<<sum<<endl;
+    }
+}
+int main () {
+    int arr[][3] = {{1,2,3}, {4,5,6}};
+    int r = 2, c = 3;
+    sumByColumn(arr, r, c);
+    
+    return 0;
+}
