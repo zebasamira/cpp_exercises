@@ -1,0 +1,30 @@
+//Find the index of max sum by rows
+
+#include <iostream>
+
+using namespace std;
+
+int maxSumByRows(int arr[][3], int r, int c){
+    int maxSum = 0, totalSum;
+    int index;
+    for (int column = 0; column < c; column++){
+        maxSum += arr[0][column];
+    }
+    for(int row = 1; row < r; row++){
+        totalSum = 0;
+        for (int column = 0; column < c; column++){
+            totalSum += arr[row][column];
+        }
+        if(totalSum > maxSum){
+            maxSum = totalSum;
+            index = row;
+        }
+    } return index; 
+}
+int main (){
+    int arr[][3] = {{2,4,0}, {6,9,0}, {1,3,0}};
+    int r = 3, c = 3;
+    cout<<maxSumByRows(arr, r, c);
+    
+    return 0;
+}
