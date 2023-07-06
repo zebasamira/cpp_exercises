@@ -1,0 +1,36 @@
+/* Write a C++ program that will give us the second largest value 
+inside a multidimensional array*/
+
+#include <iostream>
+
+using namespace std;
+
+const int rows = 2;
+const int columns = 3;
+
+int findSecondLargest(int myArray[][columns]){
+    int max1 = myArray[0][0];
+    int max2;
+    for (int r = 0; r < rows; r++){
+        for (int c = 0; c < columns; c++){
+            if (myArray[r][c] > max1){
+                max1 = myArray[r][c];
+            }
+        }
+    } max2 = myArray[0][0];
+    for (int r = 0; r < rows; r++){
+        for (int c = 0; c < columns; c++){
+            if (myArray[r][c] > max2 && myArray[r][c] < max1){
+                max2 = myArray[r][c];
+            }
+        }
+    } return max2;
+}
+
+int main () {
+    
+    int myArray[][columns] = {{1,5,3}, {4,2,6}};
+    cout<<"The second largest element in this array is: "<<findSecondLargest(myArray);
+    
+    return 0;
+}
