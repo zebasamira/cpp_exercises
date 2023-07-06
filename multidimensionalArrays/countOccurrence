@@ -1,0 +1,27 @@
+/*Write a C++ program that will count the occurrence 
+of a certain element in a multidimensional array.*/
+
+#include <iostream>
+
+using namespace std;
+
+const int c = 3;
+const int r = 3;
+
+int countOccurrence(int myArray[][c], int value){
+    int counter = 0;
+    for (int i = 0; i < r; i++){
+        for (int j = 0; j < c; j++){
+            if (myArray[i][j] == value){
+                counter++;
+            }
+        }
+    } return counter;
+}
+int main () {
+    int arr[][c] = {{1,2,3}, {4,5,2}, {7,2,9}};
+    int value = 2;
+    cout<<"Number of '"<<value<<"' is "<<countOccurrence(arr, value);
+    
+    return 0;
+}
