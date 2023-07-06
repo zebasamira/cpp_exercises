@@ -1,0 +1,28 @@
+//Write a C++ program that will return the length of each string in a multidimensional array.
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+const int rows = 2;
+const int columns = 3;
+
+void lengthOfEachString(string names[][columns]){
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < columns; j++){
+            cout<<"Length of string "<<names[i][j]<<" is "<<names[i][j].length()<<endl;
+        }
+    }
+}
+
+int main () {
+    
+    string array[][columns] = {
+        {"John", "Amelia", "Beverly"}, 
+        {"Carl", "Mario", "Evelyn"}
+        };
+    lengthOfEachString(array);
+    
+    return 0;
+}
