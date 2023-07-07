@@ -1,0 +1,35 @@
+/*Write a C++ program to create a class called "Person" with a name and age attribute.
+Create two instances of the "Person" class,
+set their attributes using the constructor, and print their name and age*/
+
+#include <iostream>
+using namespace std;
+
+class Person{
+    private:
+    string name;
+    int age;
+    
+    public:
+    void setName(string newName){
+        name = newName;
+    }
+    void setAge(int newAge){
+        age = newAge;
+    }
+    string getName(){
+        return name;
+    }
+    int getAge(){
+        return age;
+    }
+};
+int main () {
+    Person p;
+    p.setName("Jenny");
+    p.setAge(43);
+    cout<<"Name: "<<p.getName();
+    cout<<"\nAge: "<<p.getAge();
+    
+    return 0;
+}
