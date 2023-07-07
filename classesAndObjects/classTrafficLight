@@ -1,0 +1,39 @@
+/*Write a C++ program to create class called "TrafficLight" with attributes 
+for color and duration, and methods to change the color and check for red or green.*/
+
+#include <iostream>
+using namespace std;
+
+class TrafficLight{
+    private:
+    string color;
+    int duration;
+    
+    public:
+    void setColor(string c){
+        color = c;
+    }
+    string getColor(){
+        return color;
+    }
+    void setDuration(int d){
+        duration = d;
+    }
+    void checkColor(string color){
+        if (color == "red"){
+            cout<<"red";
+        }
+        else {
+            cout<<"green";
+        }
+
+    }
+};
+int main (){
+    TrafficLight tl;
+    tl.setColor("red");
+    tl.setDuration(30);
+    tl.checkColor(tl.getColor());
+    
+    return 0;
+}
