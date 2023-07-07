@@ -1,3 +1,5 @@
+//Write a C++ program that will reverse all strings in a three-dimensional array.
+
 #include <iostream>
 #include <cstring>
 
