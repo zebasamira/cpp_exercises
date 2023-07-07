@@ -1,0 +1,42 @@
+/*Create a class with the name “Calculator”. The class should take two parameters 
+and it allows the user to add, subtract, divide and multiply the two numbers. 
+The methods that you need to implement are sum, divide, multiply and difference*/
+
+#include <iostream>
+using namespace std;
+
+class Calculator{
+    private:
+    int a, b;
+    public:
+    Calculator(int x, int y){
+        a = x;
+        b = y;
+    }
+    int getA(){
+        return a;
+    }
+    int getB(){
+        return b;
+    }
+    int sum(int a, int b){
+        return a + b;
+    }
+    double divide(double a, double b){
+        return a / b;
+    }
+    int multiply(int a, int b){
+        return a * b;
+    }
+    int difference(int a, int b){
+        return a - b;
+    }
+};
+int main (){
+    
+    Calculator c(5, 3);
+    cout<<c.getA()<<" + "<<c.getB()<<" = "<<c.sum(c.getA(), c.getB())<<endl;
+    cout<<c.getA()<<" / "<<c.getB()<<" = "<<c.divide(c.getA(), c.getB())<<endl;
+    cout<<c.getA()<<" • "<<c.getB()<<" = "<<c.multiply(c.getA(), c.getB())<<endl;
+    cout<<c.getA()<<" - "<<c.getB()<<" = "<<c.difference(c.getA(), c.getB())<<endl;
+}
