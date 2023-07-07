@@ -1,0 +1,35 @@
+/*Write a C++ program that will take integers as input from the user 
+and will store their square root values into a three-dimensional array.*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main (){
+    int rows, columns, elements;
+    cout<<"How many rows do you want?";
+    cin>>rows;
+    cout<<"How many columns do you want?";
+    cin>>columns;
+    cout<<"How many elements do you want?";
+    cin>>elements;
+    double myArray[rows][columns][elements];
+    double number;
+    cout<<"Entering values into the 3D array:"<<endl;
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < columns; j++){
+            for (int k = 0; k < elements; k++){
+                cin>>number;
+                myArray[i][j][k] = number;
+            }
+        }
+    }
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < columns; j++){
+            for (int k = 0; k < elements; k++){
+                cout<<sqrt(myArray[i][j][k])<<' ';
+            }
+        }
+    }
+    return 0;
+}
