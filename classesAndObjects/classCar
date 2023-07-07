@@ -1,0 +1,40 @@
+/*Create class Car and two objects of that class (Toyota and Peugeot). 
+The class should have the following attributes:
+model
+year_created
+color
+price
+*/
+
+#include <iostream>
+using namespace std;
+
+class Car{
+    public:
+    string model, color;
+    int yearCreated, price;
+};
+int main () {
+    Car toyota;
+    Car peugeot;
+    
+    toyota.model = "Auris";
+    toyota.yearCreated = 2007;
+    toyota.color = "Grey";
+    toyota.price = 9800;
+    
+    peugeot.model = "308";
+    peugeot.yearCreated = 2003;
+    peugeot.color = "Blue";
+    peugeot.price = 3500;
+    
+    cout<<"      Toyota  Peugeot"<<endl;
+    cout<<"Model: "<<toyota.model<<"   "<<peugeot.model<<endl;
+    cout<<"Year\nCreated:"<<toyota.yearCreated<<"  "<<peugeot.yearCreated<<endl;
+    cout<<"Color: "<<toyota.color<<"   "<<peugeot.color<<endl;
+    cout<<"Price: "<<toyota.price<<"   "<<peugeot.color;
+    
+    return 0;
+
+}
+
