@@ -1,0 +1,43 @@
+/*Create class Room and methods to calculate the area and volume of the room. 
+Area = length * breadth;
+Volume = length * breadth * height; 
+
+Use constructors, get and set methods.*/
+
+#include <iostream>
+using namespace std;
+
+class Room{
+    private:
+    int length;
+    int breadth;
+    int height;
+    public:
+    Room(int l, int b, int h){
+        length = l;
+        breadth = b;
+        height = h;
+    }
+    int getLength(){
+        return length;
+    }
+    int getBreadth(){
+        return breadth;
+    }
+    int getHeight(){
+        return height;
+    }
+    int getArea(int length, int breadth){
+        return length * breadth; 
+    }
+    int getVolume(int length, int breadth, int height){
+        return length * breadth * height;
+    }
+};
+int main (){
+    Room r(3, 2, 3);
+    cout<<"A = "<<r.getArea(r.getLength(), r.getBreadth());
+    cout<<"\nV = "<<r.getVolume(r.getLength(), r.getBreadth(), r.getHeight());
+    
+    return 0;
+}
