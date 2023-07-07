@@ -1,0 +1,38 @@
+/*Write a C++ program to create a class called "Employee" with a name, salary, 
+and hire date attributes, and a method to calculate years of service.*/
+
+#include <iostream>
+using namespace std;
+
+class Employee{
+    private:
+    string name;
+    int salary, year;
+    public:
+    Employee(string n, int s, int y){
+        name = n;
+        salary = s;
+        year = y;
+    }
+    int currentYear = 2023;
+    
+    string getName(){
+        return name;
+    }
+    int getSalary(){
+        return salary;
+    }
+    int getYear(){
+        return year;
+    }
+    int getYearOfService(int currentYear, int year){
+        return currentYear - year;
+    }
+};
+int main () {
+    Employee e("John", 2500, 2002);
+    cout<<e.getName()<<" has worked here for "
+    <<e.getYearOfService(e.currentYear, e.getYear())<<" years.";
+    
+    return 0;
+}
