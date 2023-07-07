@@ -1,0 +1,54 @@
+/*Create class BankAccount that will keep information about accountNumber (string) and balance
+(double). You have to enable to set these values while creating new instance of BankAccount.
+Counstructor should have two parameters.
+Also, add following methods and implement them:
+void deposit()
+void withdraw() 
+double getBalance()
+Ensure that client couldn't withdraw more money than they have on the account.
+Error message shoult be: Insufficient funds*/
+
+#include <iostream>
+using namespace std;
+
+class BankAccount{
+    public:
+    string accountNumber;
+    double balance;
+    BankAccount(string an, int b){
+        accountNumber = an;
+        balance = b;
+    }
+    string getAccountNumber(){
+        return accountNumber;
+    }
+    void setBalance(int b){
+        balance = b;
+    }
+    double getBalance(){
+        return balance;
+    }
+    void deposit(int newBalance){
+        balance = balance + newBalance;
+    }
+    void withdraw(int newBalance){
+        if(newBalance <= balance){
+            balance = balance - newBalance;
+        } else {
+            cout<<"Insufficient funds\n";
+            cout<<balance;
+        }
+    }
+    
+};
+int main () {
+    BankAccount account("1234567890", 1000.0);
+    account.deposit(500.0);
+    cout<<"Updated Balance: "<<account.getBalance()<<endl;
+    account.withdraw(200.0);
+    cout<<"Updated Balance: "<<account.getBalance()<<endl;
+    account.withdraw(1500.0);
+    cout<<"Total Balance: "<<account.getBalance()<<endl;
+    
+    return 0;
+}
