@@ -1,0 +1,50 @@
+/*Create class Course and three objects of that class (Programming, Calculus, Physics). 
+
+
+The class should have the following attributes:
+year
+professor
+grade
+
+Use constructors for creation of objects.
+Finally, find the average grade for all 3 courses of the current year).*/
+
+#include <iostream>
+using namespace std;
+
+class Course{
+    public:
+    int year, grade;
+    string professor;
+    
+    Course(int y, string p, int g){
+        year = y;
+        professor = p;
+        grade = g;
+    }
+};
+int main (){
+    Course Programming(2022, "Dzelila", 9);
+    Course Calculus(2023, "Edin", 8);
+    Course Physics(2023, "Lejla", 7);
+    
+    //Find average
+    int currentYear = 2023;
+    double sum = 0, counter = 0;
+    
+    if(Programming.year == currentYear){
+        sum += Programming.grade;
+        counter++;
+    } if (Calculus.year == currentYear){
+        sum += Calculus.grade;
+        counter++;
+    } if (Physics.year == currentYear){
+        sum += Physics.grade;
+        counter++;
+    }
+    
+    cout<<sum<<endl<<counter<<endl;
+    double average = sum / counter;
+    cout<<"Average grade for the current year is: "<<average;
+}
+
