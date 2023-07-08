@@ -1,0 +1,19 @@
+//Write a C++ program to reverse the number (using recursion). 1234→ 4321
+
+#include <iostream>
+using namespace std;
+
+void reverseNumber(int number){
+    if (number > 9){
+        cout<<number % 10;
+        reverseNumber(number / 10);
+    } else {
+        cout<<number;
+    }
+}
+int main () {
+    int n = 1234;
+    reverseNumber(n);
+    
+    return 0;
+}
