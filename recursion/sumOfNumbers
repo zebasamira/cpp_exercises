@@ -1,0 +1,17 @@
+//Write a C++ program that will find sum of numbers until user specified number (using recursion). 
+#include <iostream>
+using namespace std;
+
+int sumOfNumbers(int number){
+    if(number > 0){
+        return number + sumOfNumbers(number - 1);
+    } else {
+        return 0;
+    }
+}
+int main (){
+    int num = 5;
+    cout<<"Sum of numbers until "<<num<<" is "<<sumOfNumbers(num);
+    
+    return 0;
+}
