@@ -1,0 +1,44 @@
+/*Write a C++ program to create a class called Triangle that has private member variables 
+for the lengths of its three sides. Implement member functions to determine if the triangle is 
+equilateral, isosceles, or scalene.*/
+
+#include <iostream>
+using namespace std;
+
+class Triangle{
+    private:
+    int a;
+    int b;
+    int c;
+    public:
+    Triangle(int x, int y, int z){
+        a = x;
+        b = y;
+        c = z;
+    }
+    
+    int getA(){
+        return a;
+    }
+    int getB(){
+        return b;
+    }
+    int getC(){
+        return c;
+    }
+    
+    string typeOfTriangle(int a, int b, int c){
+        if(a == b && a == c && b == c)
+            return "Equilateral";
+        else if (a != b && a != c && b != c)
+            return "Scalene";
+        else 
+            return "Isosceles";
+    }
+};
+int main () {
+    Triangle t(2,2,2);
+    cout<<t.typeOfTriangle(t.getA(), t.getB(), t.getC());
+    
+    return 0;
+}
