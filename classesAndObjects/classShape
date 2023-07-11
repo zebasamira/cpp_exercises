@@ -1,0 +1,64 @@
+/*Write a C++ program to implement a class called Shape with virtual member functions 
+for calculating area and perimeter. Derive classes such as Circle, Rectangle, and Triangle 
+from the Shape class and override virtual functions accordingly.*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Shape{
+    public:
+    //for circle;
+    int radius = 2;
+    
+    //for rectangle;
+    int length = 2, width = 2;
+    
+    //for triangle;
+    int a = 2, ha = 2, b = 3, c = 4;
+    
+    
+};
+class Circle: public Shape{
+    public:
+    double area(int radus){
+        return pow(radius, 2) * M_PI;
+    }
+    double perimeter(int radius){
+        return 2 * radius * M_PI;
+    }
+};
+class Rectangle: public Shape{
+    public:
+    int area(int length, int width){
+        return length * width;
+    }
+    int perimeter(int length, int width){
+        return 2 * (length + width);
+    }
+};
+class Triangle: public Shape{
+    public:
+    int area(int a, int ha){
+        return (a * ha) / 2;
+    }
+    int perimeter(int a, int b, int c){
+        return a + b + c;
+    }
+};
+int main () {
+    Shape s;
+    Circle c;
+    Rectangle r;
+    Triangle t;
+    cout<<"AREA:\n";
+    cout<<"Circle: "<<c.area(s.radius)<<endl;
+    cout<<"Rectangle: "<<r.area(s.length, s.width)<<endl;
+    cout<<"Triangle: "<<t.area(s.a, s.ha)<<endl;
+    cout<<"\nPERIMETER:\n";
+    cout<<"Circle: "<<c.perimeter(s.radius)<<endl;
+    cout<<"Rectangle: "<<r.perimeter(s.length, s.width)<<endl;
+    cout<<"Triangle: "<<t.perimeter(s.a, s.b, s.c);
+    
+    return 0;
+}
